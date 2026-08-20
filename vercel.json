@@ -1,6 +1,6 @@
 {
   "framework": "nextjs",
-  "installCommand": "corepack enable && pnpm install --no-frozen-lockfile",
+  "installCommand": "npm install -g pnpm@10.4.1 && pnpm install --no-frozen-lockfile",
   "buildCommand": "pnpm build",
   "regions": ["cdg1"]
 }
