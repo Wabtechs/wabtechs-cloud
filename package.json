@@ -64,7 +64,7 @@
     "husky": "^9.1.0",
     "lint-staged": "^15.2.0"
   },
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@11.22.0",
   "engines": {
     "node": ">=22.0.0"
   },
