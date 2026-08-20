@@ -100,7 +100,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "pnpm build:js && pnpm build:css",
+    "build": "npm run build:js && npm run build:css",
     "build:js": "tsup src/index.ts src/components/*.tsx src/providers/*.tsx --format esm --dts --clean --sourcemap --external react --external react-dom --external lucide-react --external @wabtechs/hooks --external @wabtechs/icons --external @wabtechs/themes --external @wabtechs/utils --external @wabtechs/tokens",
     "build:css": "tailwindcss -i src/styles/input.css -o dist/styles.css --minify",
     "typecheck": "tsc --noEmit",
@@ -129,10 +129,10 @@
     "@radix-ui/react-toast": "^1.2.6",
     "@radix-ui/react-tooltip": "^1.2.16",
     "@radix-ui/react-visually-hidden": "^1.1.1",
-    "@wabtechs/hooks": "workspace:*",
-    "@wabtechs/icons": "workspace:*",
-    "@wabtechs/themes": "workspace:*",
-    "@wabtechs/utils": "workspace:*",
+    "@wabtechs/hooks": "*",
+    "@wabtechs/icons": "*",
+    "@wabtechs/themes": "*",
+    "@wabtechs/utils": "*",
     "class-variance-authority": "^0.7.1"
   },
   "peerDependencies": {

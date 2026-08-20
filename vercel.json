@@ -1,6 +1,6 @@
 {
   "framework": "nextjs",
-  "installCommand": "npm install -g pnpm@11 && pnpm install --no-frozen-lockfile",
-  "buildCommand": "pnpm build",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
   "regions": ["cdg1"]
 }

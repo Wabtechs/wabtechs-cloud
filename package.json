@@ -17,20 +17,20 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "echo \"playwright not installed\"",
-    "check:all": "pnpm lint && pnpm typecheck && pnpm test && pnpm format:check",
+    "check:all": "npm run lint && npm run typecheck && npm run test && npm run format:check",
     "prepare": "husky"
   },
   "dependencies": {
     "next": "15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "@wabtechs/ui": "workspace:*",
-    "@wabtechs/sdk": "workspace:*",
-    "@wabtechs/utils": "workspace:*",
-    "@wabtechs/hooks": "workspace:*",
-    "@wabtechs/icons": "workspace:*",
-    "@wabtechs/tokens": "workspace:*",
-    "@wabtechs/themes": "workspace:*",
+    "@wabtechs/ui": "*",
+    "@wabtechs/sdk": "*",
+    "@wabtechs/utils": "*",
+    "@wabtechs/hooks": "*",
+    "@wabtechs/icons": "*",
+    "@wabtechs/tokens": "*",
+    "@wabtechs/themes": "*",
     "@tanstack/react-query": "^5.60.0",
     "zustand": "^5.0.0",
     "react-hook-form": "^7.54.0",
@@ -64,10 +64,13 @@
     "husky": "^9.1.0",
     "lint-staged": "^15.2.0"
   },
-  "packageManager": "pnpm@11.22.0",
   "engines": {
     "node": ">=22.0.0"
   },
+  "workspaces": [
+    ".",
+    "packages/*"
+  ],
   "lint-staged": {
     "*.{ts,tsx,js,jsx,mjs,cjs}": [
       "prettier --write",
