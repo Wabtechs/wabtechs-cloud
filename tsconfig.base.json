@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "verbatimModuleSyntax": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@wabtechs/tokens": ["packages/tokens/src/index.ts"],
+      "@wabtechs/utils": ["packages/utils/src/index.ts"],
+      "@wabtechs/hooks": ["packages/hooks/src/index.ts"],
+      "@wabtechs/icons": ["packages/icons/src/index.ts"],
+      "@wabtechs/themes": ["packages/themes/src/index.ts"],
+      "@wabtechs/ui": ["packages/ui/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "build", ".next", ".turbo", "coverage", "storybook-static", "test-results"]
+}
