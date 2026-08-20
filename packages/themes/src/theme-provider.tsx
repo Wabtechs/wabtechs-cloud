@@ -27,7 +27,7 @@ export interface ThemeContextValue {
   themes?: WabtechsTheme[];
 }
 
-const ThemeContext = React.createContext<ThemeContextValue | null>(null);
+export const ThemeContext = React.createContext<ThemeContextValue | null>(null);
 
 const SYSTEM_QUERY = '(prefers-color-scheme: dark)';
 
