@@ -1,0 +1,35 @@
+{
+  "name": "@wabtechs/tokens",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Design tokens de Wabtechs UI (couleurs, espacements, radius, ombres, typographie, densité).",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./tokens.css": "./dist/tokens.css",
+    "./styles.css": "./dist/tokens.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean --sourcemap && node ../../scripts/build-css.mjs src/tokens.css dist/tokens.css",
+    "build:css": "node ../../scripts/build-css.mjs src/tokens.css dist/tokens.css",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vitest run",
+    "clean": "node ../../scripts/clean.mjs dist"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.0"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "name": "@wabtechs/cloud",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Wabtechs Cloud — Portail officiel de gestion de l'ecosysteme Wabtechs.",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "echo \"playwright not installed\"",
+    "check:all": "pnpm lint && pnpm typecheck && pnpm test && pnpm format:check",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "next": "15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@wabtechs/ui": "workspace:*",
+    "@wabtechs/sdk": "workspace:*",
+    "@wabtechs/utils": "workspace:*",
+    "@wabtechs/hooks": "workspace:*",
+    "@wabtechs/icons": "workspace:*",
+    "@wabtechs/tokens": "workspace:*",
+    "@wabtechs/themes": "workspace:*",
+    "@tanstack/react-query": "^5.60.0",
+    "zustand": "^5.0.0",
+    "react-hook-form": "^7.54.0",
+    "@hookform/resolvers": "^3.9.0",
+    "zod": "^3.24.0",
+    "sonner": "^1.7.0",
+    "framer-motion": "^12.0.0",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.0",
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.49",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "15.1.0",
+    "typescript-eslint": "^8.18.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-tailwindcss": "^4.0.0",
+    "vitest": "^2.1.0",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/jest-dom": "^6.6.0",
+    "@testing-library/user-event": "^14.5.0",
+    "jsdom": "^25.0.0",
+    
+    "prettier": "^3.4.0",
+    "prettier-plugin-tailwindcss": "^0.6.0",
+    "husky": "^9.1.0",
+    "lint-staged": "^15.2.0"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,mjs,cjs}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{md,json,yml,yaml,css}": [
+      "prettier --write"
+    ]
+  }
+}

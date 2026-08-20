@@ -1,0 +1,40 @@
+{
+  "name": "@wabtechs/icons",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Système d'icônes de Wabtechs UI (Lucide par défaut, moteur remplaçable, icônes de marque).",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean --sourcemap --external react,lucide-react",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vitest run",
+    "clean": "node ../../scripts/clean.mjs dist"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "dependencies": {
+    "lucide-react": "^1.31.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "react": "^19.2.8",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.0"
+  }
+}

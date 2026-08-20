@@ -1,0 +1,158 @@
+/**
+ * Wabtechs UI — build CSS (Tailwind CSS v4).
+ *
+ * Ce fichier est compilé par @tailwindcss/cli en `dist/styles.css`,
+ * un fichier autonome (tokens + preflight + utilities) que les
+ * applications importent via `@wabtechs/ui/styles.css`.
+ *
+ * Les utilitaires font référence aux variables --wabtechs-* via
+ * `@theme inline` : le theming (light/dark/system, white label,
+ * densité) fonctionne donc au runtime sans recompilation.
+ */
+
+@layer theme, base, components, utilities;
+
+@import '../../tokens/src/tokens.css';
+@import 'tailwindcss/theme' layer(theme);
+@import 'tailwindcss/preflight' layer(base);
+@import 'tailwindcss/utilities' layer(utilities);
+
+/* Scan des classes présentes dans les composants */
+@source '../../src';
+
+/* Mappage tokens → thème Tailwind (inline = référence runtime directe) */
+@theme inline {
+  --color-background: var(--wabtechs-background);
+  --color-foreground: var(--wabtechs-foreground);
+  --color-card: var(--wabtechs-card);
+  --color-card-foreground: var(--wabtechs-card-foreground);
+  --color-muted: var(--wabtechs-muted);
+  --color-muted-foreground: var(--wabtechs-muted-foreground);
+  --color-primary: var(--wabtechs-primary);
+  --color-primary-foreground: var(--wabtechs-primary-foreground);
+  --color-primary-hover: var(--wabtechs-primary-hover);
+  --color-secondary: var(--wabtechs-secondary);
+  --color-secondary-foreground: var(--wabtechs-secondary-foreground);
+  --color-accent: var(--wabtechs-accent);
+  --color-accent-foreground: var(--wabtechs-accent-foreground);
+  --color-destructive: var(--wabtechs-destructive);
+  --color-destructive-foreground: var(--wabtechs-destructive-foreground);
+  --color-success: var(--wabtechs-success);
+  --color-success-foreground: var(--wabtechs-success-foreground);
+  --color-warning: var(--wabtechs-warning);
+  --color-warning-foreground: var(--wabtechs-warning-foreground);
+  --color-info: var(--wabtechs-info);
+  --color-info-foreground: var(--wabtechs-info-foreground);
+  --color-border: var(--wabtechs-border);
+  --color-input: var(--wabtechs-input);
+  --color-ring: var(--wabtechs-ring);
+
+  --font-sans: var(--wabtechs-font-sans);
+  --font-mono: var(--wabtechs-font-mono);
+
+  --radius-sm: var(--wabtechs-radius-sm);
+  --radius-md: var(--wabtechs-radius-md);
+  --radius-lg: var(--wabtechs-radius-lg);
+  --radius-xl: var(--wabtechs-radius-xl);
+
+  --shadow-sm: var(--wabtechs-shadow-sm);
+  --shadow-md: var(--wabtechs-shadow-md);
+  --shadow-lg: var(--wabtechs-shadow-lg);
+
+  /* Densité : toutes les utilitaires d'espacement (h-9, p-4, gap-2…)
+     sont dérivées de cette unité au runtime. */
+  --spacing: var(--wabtechs-spacing-unit);
+}
+
+@layer base {
+  [data-wt-theme] {
+    font-family: var(--wabtechs-font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Motion system (utilisé par Tooltip, Dialog, Drawer…).               */
+/* Respecte automatiquement prefers-reduced-motion (tokens.css).       */
+/* ------------------------------------------------------------------ */
+@keyframes wt-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes wt-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes wt-zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes wt-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wt-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wt-animate-fade-in {
+  animation: wt-fade-in 150ms ease-out both;
+}
+
+.wt-animate-fade-out {
+  animation: wt-fade-out 100ms ease-in both;
+}
+
+.wt-animate-zoom-in {
+  animation: wt-zoom-in 150ms ease-out both;
+}
+
+.wt-animate-slide-up {
+  animation: wt-slide-up 200ms ease-out both;
+}
+
+.wt-animate-slide-down {
+  animation: wt-slide-down 200ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wt-animate-fade-in,
+  .wt-animate-fade-out,
+  .wt-animate-zoom-in,
+  .wt-animate-slide-up,
+  .wt-animate-slide-down {
+    animation: none;
+  }
+}

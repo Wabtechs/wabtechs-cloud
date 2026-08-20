@@ -1,0 +1,154 @@
+/**
+ * Wabtechs UI — Design Tokens
+ *
+ * Tous les composants consomment ces variables CSS. Aucune couleur,
+ * dimension ou rayon ne doit être hardcodé dans un composant.
+ *
+ * Namespace : --wabtechs-*
+ */
+
+/* ------------------------------------------------------------------ */
+/* Light (défaut) + palette de base                                    */
+/* ------------------------------------------------------------------ */
+:root,
+[data-wt-theme='light'] {
+  color-scheme: light;
+
+  /* Couleurs de base */
+  --wabtechs-background: #ffffff;
+  --wabtechs-foreground: #18181b;
+
+  --wabtechs-card: #ffffff;
+  --wabtechs-card-foreground: #18181b;
+
+  --wabtechs-muted: #f4f4f5;
+  --wabtechs-muted-foreground: #71717a;
+
+  --wabtechs-primary: #842ae3;
+  --wabtechs-primary-foreground: #ffffff;
+  --wabtechs-primary-hover: #7323c4;
+
+  --wabtechs-secondary: #f4f4f5;
+  --wabtechs-secondary-foreground: #18181b;
+
+  --wabtechs-accent: #f3eafd;
+  --wabtechs-accent-foreground: #5b1fa0;
+
+  --wabtechs-destructive: #dc2626;
+  --wabtechs-destructive-foreground: #ffffff;
+
+  --wabtechs-success: #059669;
+  --wabtechs-success-foreground: #ffffff;
+  --wabtechs-warning: #d97706;
+  --wabtechs-warning-foreground: #ffffff;
+  --wabtechs-info: #2563eb;
+  --wabtechs-info-foreground: #ffffff;
+
+  --wabtechs-border: #e4e4e7;
+  --wabtechs-input: #e4e4e7;
+  --wabtechs-ring: #842ae3;
+
+  /* Radius */
+  --wabtechs-radius-sm: 0.375rem;
+  --wabtechs-radius-md: 0.5rem;
+  --wabtechs-radius-lg: 0.75rem;
+  --wabtechs-radius-xl: 1rem;
+  --wabtechs-radius-full: 9999px;
+
+  /* Shadows */
+  --wabtechs-shadow-sm: 0 1px 2px 0 rgb(24 24 27 / 0.06);
+  --wabtechs-shadow-md: 0 4px 6px -1px rgb(24 24 27 / 0.07), 0 2px 4px -2px rgb(24 24 27 / 0.05);
+  --wabtechs-shadow-lg: 0 10px 15px -3px rgb(24 24 27 / 0.08), 0 4px 6px -4px rgb(24 24 27 / 0.05);
+
+  /* Typographie */
+  --wabtechs-font-sans:
+    'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+  --wabtechs-font-mono:
+    'JetBrains Mono', ui-monospace, 'SF Mono', 'Cascadia Mono', 'Segoe UI Mono', Menlo, Consolas,
+    monospace;
+
+  /* Densité (unité d'espacement Tailwind : h-9 = 9 × unité) */
+  --wabtechs-spacing-unit: 0.25rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Dark                                                                */
+/* ------------------------------------------------------------------ */
+[data-wt-theme='dark'] {
+  color-scheme: dark;
+
+  --wabtechs-background: #0a0a0a;
+  --wabtechs-foreground: #fafafa;
+
+  --wabtechs-card: #17171a;
+  --wabtechs-card-foreground: #fafafa;
+
+  --wabtechs-muted: #1f1f22;
+  --wabtechs-muted-foreground: #a1a1aa;
+
+  --wabtechs-primary: #8f35ef;
+  --wabtechs-primary-foreground: #ffffff;
+  --wabtechs-primary-hover: #a055f5;
+
+  --wabtechs-secondary: #26262b;
+  --wabtechs-secondary-foreground: #fafafa;
+
+  --wabtechs-accent: #241439;
+  --wabtechs-accent-foreground: #d4b8ff;
+
+  --wabtechs-destructive: #ef4444;
+  --wabtechs-destructive-foreground: #ffffff;
+
+  --wabtechs-success: #10b981;
+  --wabtechs-success-foreground: #022c22;
+  --wabtechs-warning: #f59e0b;
+  --wabtechs-warning-foreground: #451a03;
+  --wabtechs-info: #3b82f6;
+  --wabtechs-info-foreground: #172554;
+
+  --wabtechs-border: #27272a;
+  --wabtechs-input: #2e2e33;
+  --wabtechs-ring: #a055f5;
+
+  --wabtechs-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --wabtechs-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --wabtechs-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+}
+
+/* ------------------------------------------------------------------ */
+/* Densité UI                                                          */
+/* ------------------------------------------------------------------ */
+[data-wt-density='compact'] {
+  --wabtechs-spacing-unit: 0.2rem;
+}
+
+[data-wt-density='comfortable'] {
+  --wabtechs-spacing-unit: 0.25rem;
+}
+
+[data-wt-density='spacious'] {
+  --wabtechs-spacing-unit: 0.3125rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Accessibilité : reduced motion                                      */
+/* ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Transitions désactivées pendant un changement de thème */
+[data-wt-theme].wt-no-transitions,
+[data-wt-theme].wt-no-transitions *,
+[data-wt-theme].wt-no-transitions *::before,
+[data-wt-theme].wt-no-transitions *::after {
+  transition: none !important;
+}

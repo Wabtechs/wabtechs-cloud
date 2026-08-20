@@ -1,0 +1,25 @@
+{
+  "name": "@wabtechs/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Configuration ESLint (flat config) partagée de Wabtechs UI.",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "globals": "^15.0.0",
+    "typescript-eslint": "^8.67.0"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  },
+  "scripts": {
+    "clean": "node ../../scripts/clean.mjs"
+  }
+}
