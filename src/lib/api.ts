@@ -1,5 +1,4 @@
 import { sdk } from '@/lib/sdk';
-import { getSession } from '@/lib/auth';
 import type {
   User,
   Organization,
@@ -25,10 +24,7 @@ export const authApi = {
   },
 
   async logout() {
-    const session = await getSession();
-    if (session) {
-      await sdk.post('/api/v1/identity/auth/logout');
-    }
+    await sdk.post('/api/v1/identity/auth/logout');
   },
 
   async me() {
