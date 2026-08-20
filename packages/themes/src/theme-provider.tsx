@@ -23,8 +23,8 @@ export interface ThemeContextValue {
   setTheme: (theme: ThemeName) => void;
   toggleTheme: () => void;
   resolvedTheme: ResolvedTheme;
-  activeTheme?: WabtechsTheme;
-  themes?: WabtechsTheme[];
+  activeTheme?: WabtechsTheme | undefined;
+  themes?: WabtechsTheme[] | undefined;
 }
 
 export const ThemeContext = React.createContext<ThemeContextValue | null>(null);
