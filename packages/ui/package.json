@@ -101,7 +101,7 @@
   ],
   "scripts": {
     "build": "npm run build:js && npm run build:css",
-    "build:js": "tsup src/index.ts src/components/*.tsx src/providers/*.tsx --format esm --dts --clean --sourcemap --external react --external react-dom --external lucide-react --external @wabtechs/hooks --external @wabtechs/icons --external @wabtechs/themes --external @wabtechs/utils --external @wabtechs/tokens",
+    "build:js": "tsup src/index.ts src/components/*.tsx src/providers/*.tsx --format esm --clean --sourcemap --external react --external react-dom --external lucide-react --external @wabtechs/hooks --external @wabtechs/icons --external @wabtechs/themes --external @wabtechs/utils --external @wabtechs/tokens",
     "build:css": "tailwindcss -i src/styles/input.css -o dist/styles.css --minify",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src tests",
