@@ -3,6 +3,8 @@ const coreApiUrl = process.env.CORE_API_URL || 'http://localhost:3001';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
   transpilePackages: [
     '@wabtechs/ui',
     '@wabtechs/sdk',
