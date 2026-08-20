@@ -6,6 +6,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "next dev --turbopack",
+    "prebuild": "npm run build -w packages/utils && npm run build -w packages/hooks && npm run build -w packages/icons && npm run build -w packages/themes && npm run build -w packages/sdk && npm run build -w packages/ui",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
